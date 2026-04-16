@@ -134,7 +134,7 @@ copy .env.example .env
 Edit `frontend/.env`:
 
 ```env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=https://wedzo-project-8.onrender.com
 VITE_BASE_URL=http://localhost:5173
 VITE_GOOGLE_MAPS_KEY=your_google_maps_key_optional
 ```
