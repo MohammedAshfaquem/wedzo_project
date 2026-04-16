@@ -61,6 +61,13 @@ class WeddingCreate(BaseModel):
     primary_color: Optional[str] = "#B76E79"
     secondary_color: Optional[str] = "#6B2D3E"
 
+    @field_validator("rsvp_deadline", mode="before")
+    @classmethod
+    def empty_deadline_to_none(cls, value):
+        if value == "":
+            return None
+        return value
+
 
 class WeddingUpdate(BaseModel):
     invitation_mode: Optional[str] = None
@@ -95,6 +102,13 @@ class WeddingUpdate(BaseModel):
     primary_color: Optional[str] = None
     secondary_color: Optional[str] = None
     is_active: Optional[bool] = None
+
+    @field_validator("rsvp_deadline", mode="before")
+    @classmethod
+    def empty_deadline_to_none(cls, value):
+        if value == "":
+            return None
+        return value
 
 
 class WeddingResponse(BaseModel):
